@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Send a Notification to Microsoft Teams via PowerShell
 date: '2018-05-25 19:02:33'
 tags:
