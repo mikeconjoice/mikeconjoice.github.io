@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 'Windows Server Core Error - SWbemObjectEx: Invalid index'
 date: '2017-01-24 09:03:07'
 tags:

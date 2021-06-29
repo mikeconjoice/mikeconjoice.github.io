@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Enabling Password Saving on SonicWall Global VPN Client
 date: '2016-06-10 17:56:33'
 tags:

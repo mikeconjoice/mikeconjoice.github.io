@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: A Simple Way to Upgrade Your Standalone or Clustered ESXi Servers
 date: '2017-01-04 09:58:00'
 tags:

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Hyper-V Storage Migration Failed
 date: '2017-06-13 09:00:00'
 tags:

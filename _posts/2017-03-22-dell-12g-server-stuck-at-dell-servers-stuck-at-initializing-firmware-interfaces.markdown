@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Dell 12G Server Stuck at "Initializing Firmware Interfaces...
 date: '2017-03-22 07:37:00'
 tags:

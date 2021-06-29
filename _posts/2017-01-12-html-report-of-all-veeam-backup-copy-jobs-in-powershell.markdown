@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: HTML Report of all Veeam Backup Copy Jobs in Powershell
 date: '2017-01-12 17:46:00'
 tags:

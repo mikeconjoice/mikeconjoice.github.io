@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Rename Windows Server Domain Controllers
 date: '2017-06-13 12:15:00'
 tags:

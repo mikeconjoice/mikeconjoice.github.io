@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Upgrade SQL Express to SQL Standard
 date: '2017-06-14 08:15:00'
 tags:

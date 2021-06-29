@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Maximum number of Exchange accounts in an Outlook profile
 date: '2016-06-10 17:58:45'
 tags:

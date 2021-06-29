@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: VeeamON 2017 Roundup Part 1 - What is VeeamON?
 date: '2017-05-30 08:55:58'
 tags:

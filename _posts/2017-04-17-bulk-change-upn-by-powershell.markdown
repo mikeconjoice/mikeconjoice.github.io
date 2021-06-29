@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Bulk Change UPN by Powershell
 date: '2017-04-17 12:00:00'
 tags:

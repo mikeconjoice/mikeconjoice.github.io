@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Reset Azure VPN Gateway
 date: '2017-04-17 11:05:00'
 tags:

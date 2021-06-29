@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Manual Exchange Log Purge
 ---
 
