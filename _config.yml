@@ -16,9 +16,7 @@
 title: Mike Conjoice
 email: mikeconjoice@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Solution Team Manager
-  Veeam Vanguard 2018/2019/2020 :: vExpert 2018/2019
-  Often mistaken for "that guy from Guess Who?"
+  Personal Blog of Mike Conjoice
 twitter_username: mikeconjoice
 github_username: mikeconjoice
 minimal_mistakes_skin: default
@@ -60,7 +58,7 @@ plugins:
 author:
   name   : "Mike Conjoice"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Solution Team Manager :: Veeam Vanguard 2018/2019/2020 :: vExpert 2018/2019 :: Often mistaken for "that guy from Guess Who?""
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
