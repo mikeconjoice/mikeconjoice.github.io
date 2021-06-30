@@ -57,7 +57,7 @@ plugins:
 
 author:
   name   : "Mike Conjoice"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "//assets/images/bio-photo.jpg"
   bio    : "Solution Team Manager :: Veeam Vanguard 2018/2019/2020 :: vExpert 2018/2019 :: Often mistaken for 'that guy from Guess Who?'"
   links:
     - label: "Website"
