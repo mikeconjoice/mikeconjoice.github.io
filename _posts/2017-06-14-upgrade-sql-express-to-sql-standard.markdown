@@ -12,19 +12,19 @@ tags:
 If you'd like to upgrade a SQL Express instance to a SQL Standard instance via an in place upgrade, it's nice and easy to do through the inbuilt wizard within the SQL Setup GUI.
 
 1. Select Edition Upgrade from the Maintenance menu  
- ![image2021-2-9-15_6_47]( __GHOST_URL__ /content/images/2021/02/image2021-2-9-15_6_47.png)
+ ![image2021-2-9-15_6_47](assets/images/2021/02/image2021-2-9-15_6_47.png)
 2. Click Next  
- ![Edition-upgrade-2008-R2-2]( __GHOST_URL__ /content/images/2021/02/Edition-upgrade-2008-R2-2.png)
+ ![Edition-upgrade-2008-R2-2](assets/images/2021/02/Edition-upgrade-2008-R2-2.png)
 3. Enter the SQL product key  
- ![image2021-2-9-15_9_11]( __GHOST_URL__ /content/images/2021/02/image2021-2-9-15_9_11.png)
+ ![image2021-2-9-15_9_11](assets/images/2021/02/image2021-2-9-15_9_11.png)
 4. Accept the license terms  
- ![image2021-2-9-15_10_31]( __GHOST_URL__ /content/images/2021/02/image2021-2-9-15_10_31.png)
+ ![image2021-2-9-15_10_31](assets/images/2021/02/image2021-2-9-15_10_31.png)
 5. Select the required instance (Usually MSSQLSERVER)  
- ![image2021-2-9-15_21_51]( __GHOST_URL__ /content/images/2021/02/image2021-2-9-15_21_51.png)
+ ![image2021-2-9-15_21_51](assets/images/2021/02/image2021-2-9-15_21_51.png)
 6. Click Next  
- ![image2021-2-9-15_23_7]( __GHOST_URL__ /content/images/2021/02/image2021-2-9-15_23_7.png)
+ ![image2021-2-9-15_23_7](assets/images/2021/02/image2021-2-9-15_23_7.png)
 7. Click Upgrade  
- ![image2021-2-9-15_24_7]( __GHOST_URL__ /content/images/2021/02/image2021-2-9-15_24_7.png)
+ ![image2021-2-9-15_24_7](assets/images/2021/02/image2021-2-9-15_24_7.png)
 8. Upgrade Complete!
 
 - Run the following query to confirm the upgrade worked.

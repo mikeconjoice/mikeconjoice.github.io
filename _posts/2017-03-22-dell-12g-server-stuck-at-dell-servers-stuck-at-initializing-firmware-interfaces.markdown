@@ -14,7 +14,7 @@ We've recently experienced an issue with an old Dell PowerEdge T320 which was ta
 
 If you look at the progress of the server through the iDrac, it appears to have hung during the initial POST at " **Initializing Firmware Interfaces...**"
 
-![]( __GHOST_URL__ /content/images/2017/03/Initializing-firmware-Interfaces.JPG)
+![](assets/images/2017/03/Initializing-firmware-Interfaces.JPG)
 
 In _our_ case, the issue was related to USB drives being plugged in to the server.
 
