@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bupa Dental Care - Check-in</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+    <div class="bupa-pattern"></div>
+    <div class="container">
+        <header class="header">
+            <img src="img/bupa-logo.png" alt="Bupa Dental Care" class="logo">
+            <h1>Appointment Check-in</h1>
+        </header>
+        
+        <main class="content">
+            <div class="scanner-container">
+                <h2>Scan Your Appointment QR Code</h2>
+                <div id="qr-reader"></div>
+                <p class="scanner-instructions">Position the QR code from your appointment confirmation within the scanner.</p>
+            </div>
+            
+            <!-- For demo purposes, also add a manual override -->
+            <div class="manual-entry">
+                <p>Testing only: <a href="checkin.html?appointmentId=TEST12345">Simulate successful scan</a></p>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2025 Bupa Dental Care</p>
+        </footer>
+    </div>
+    
+    <script src="js/qrscanner.js"></script>
+</body>
+</html>
