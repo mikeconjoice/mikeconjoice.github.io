@@ -19,32 +19,55 @@
     <input type="number" id="rageLevel" min="1" max="10" value="5" class="border rounded p-1 w-16 text-center" />
   </div>
 
-  <button onclick="rageify()" class="px-10 py-4 rounded-full font-semibold text-lg bg-red-600 text-white hover:bg-red-700 transition shadow-lg">Unleash Rage</button>
+  <button id="rageButton" class="px-10 py-4 rounded-full font-semibold text-lg bg-red-600 text-white hover:bg-red-700 transition shadow-lg">
+    Unleash Rage
+  </button>
 
   <h2 class="text-2xl font-bold mt-10 mb-4">Output</h2>
-  <pre id="outputText" class="whitespace-pre-wrap text-left bg-slate-100 p-6 rounded-2xl border"></pre>
+  <pre id="outputText" class="whitespace-pre-wrap text-left bg-slate-100 p-6 rounded-2xl border min-h-[120px]"></pre>
 </section>
 
 <script>
-async function rageify() {
+const button = document.getElementById("rageButton");
+const output = document.getElementById("outputText");
+
+async function streamOutput(text) {
+  output.textContent = "";
+  for (let i = 0; i < text.length; i++) {
+    output.textContent += text[i];
+    await new Promise(r => setTimeout(r, 15)); // small delay for streaming effect
+    output.scrollTop = output.scrollHeight;
+  }
+}
+
+button.addEventListener("click", async () => {
   const input = document.getElementById("inputText").value;
   const rageLevel = document.getElementById("rageLevel").value;
 
   if(!input) return alert("Paste your test case first!");
 
-  const res = await fetch("https://qa-sentiment-api.mikeconjoice.workers.dev/", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: input, rageLevel })
-  });
+  output.textContent = "💥 Unleashing rage…";
+  button.disabled = true;
 
-  const data = await res.json();
-  if(data.error) {
-    document.getElementById("outputText").textContent = `Error: ${data.error}`;
-  } else {
-    document.getElementById("outputText").textContent = data.result;
+  try {
+    const res = await fetch("https://qa-sentiment-api.mikeconjoice.workers.dev/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: input, rageLevel })
+    });
+
+    const data = await res.json();
+    if(data.error) {
+      output.textContent = `Error: ${data.error}`;
+    } else {
+      await streamOutput(data.result);
+    }
+  } catch(e) {
+    output.textContent = `Network error: ${e}`;
+  } finally {
+    button.disabled = false;
   }
-}
+});
 </script>
 
 </body>
