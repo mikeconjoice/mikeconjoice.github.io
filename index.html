@@ -1,110 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QA Sentiment Optimisation Platform</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>QA Sentiment™ Rage Tool</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<script>
-  async function rageify() {
-    const input = document.querySelector("textarea").value;
-
-    const res = await fetch("https://qa-sentiment-api.mikeconjoice.workers.dev/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: input })
-    });
-
-    const data = await res.json();
-    alert(data.result);
-  }
-</script>
-
 <body class="bg-white text-slate-900 antialiased">
 
-<!-- NAV -->
-<nav class="border-b border-slate-200">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="font-bold">QA Sentiment™</span>
-    <div class="space-x-6 text-sm">
-      <a href="security.html" class="hover:text-red-600">Security</a>
-      <a href="api.html" class="hover:text-red-600">API</a>
-      <a href="terms.html" class="hover:text-red-600">Terms</a>
-    </div>
+<section class="max-w-4xl mx-auto px-6 py-20 text-center">
+  <h1 class="text-5xl font-extrabold mb-6">QA Sentiment™ Rage Tool</h1>
+  <p class="text-slate-600 mb-6">Paste your boring QA test case and get brutally honest, profanity-filled output.</p>
+
+  <textarea id="inputText" class="w-full h-40 p-6 border rounded-2xl mb-4" placeholder="Given the user is logged in..."></textarea>
+
+  <div class="mb-4">
+    <label for="rageLevel" class="mr-2">Rage Level (1–10):</label>
+    <input type="number" id="rageLevel" min="1" max="10" value="5" class="border rounded p-1 w-16 text-center" />
   </div>
-</nav>
 
-<!-- HERO -->
-<section class="max-w-7xl mx-auto px-6 py-28 text-center">
-  <span class="inline-block mb-6 px-4 py-1 text-sm rounded-full bg-red-50 text-red-700">
-    Enterprise-grade honesty for QA teams
-  </span>
+  <button onclick="rageify()" class="px-10 py-4 rounded-full font-semibold text-lg bg-red-600 text-white hover:bg-red-700 transition shadow-lg">Unleash Rage</button>
 
-  <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-8">
-    QA Sentiment Optimisation Platform
-  </h1>
-
-  <p class="max-w-3xl mx-auto text-xl text-slate-600 mb-12">
-    Transform polite, corporate QA test cases into
-    <strong class="text-red-600">emotionally accurate, brutally honest fucking reality</strong>.
-  </p>
-
-  <button class="px-10 py-4 rounded-full font-semibold text-lg
-                 bg-red-600 text-white hover:bg-red-700 transition shadow-lg">
-    Start Abusing Your Tests
-  </button>
+  <h2 class="text-2xl font-bold mt-10 mb-4">Output</h2>
+  <pre id="outputText" class="whitespace-pre-wrap text-left bg-slate-100 p-6 rounded-2xl border"></pre>
 </section>
 
-<!-- FEATURES -->
-<section class="bg-slate-50 py-24">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+<script>
+async function rageify() {
+  const input = document.getElementById("inputText").value;
+  const rageLevel = document.getElementById("rageLevel").value;
 
-    <div class="bg-white p-8 rounded-2xl border">
-      <h3 class="font-semibold text-lg mb-2">The Problem</h3>
-      <p class="text-slate-600">
-        QA documentation pretends software behaves itself.
-        This is a fucking lie.
-      </p>
-    </div>
+  if(!input) return alert("Paste your test case first!");
 
-    <div class="bg-white p-8 rounded-2xl border">
-      <h3 class="font-semibold text-lg mb-2">The Insight</h3>
-      <p class="text-slate-600">
-        Teams align faster when test cases say what everyone is already thinking.
-      </p>
-    </div>
+  const res = await fetch("https://qa-sentiment-api.mikeconjoice.workers.dev/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: input, rageLevel })
+  });
 
-    <div class="bg-white p-8 rounded-2xl border">
-      <h3 class="font-semibold text-lg mb-2">The Solution</h3>
-      <p class="text-slate-600">
-        Strategic profanity injected directly into your Given-When-Then flows.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="max-w-4xl mx-auto px-6 py-28 text-center">
-  <h2 class="text-4xl font-bold mb-6">Paste Your Test Case</h2>
-  <p class="text-slate-600 mb-8">
-    We’ll return it with honesty, rage, and zero respect for corporate tone.
-  </p>
-
-  <textarea class="w-full h-40 p-6 border rounded-2xl mb-6"
-            placeholder="Given the user is logged in..."></textarea>
-
-<button onclick="rageify()" class="px-10 py-4 rounded-full font-semibold text-lg
-               bg-red-600 text-white hover:bg-red-700 transition">
-  Apply Enterprise Rage™
-</button>
-
-</section>
-
-<footer class="border-t py-10 text-center text-sm text-slate-500">
-  Not HR approved. Not enterprise safe. Absolutely fucking necessary.
-</footer>
+  const data = await res.json();
+  if(data.error) {
+    document.getElementById("outputText").textContent = `Error: ${data.error}`;
+  } else {
+    document.getElementById("outputText").textContent = data.result;
+  }
+}
+</script>
 
 </body>
 </html>
