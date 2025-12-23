@@ -8,7 +8,6 @@
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
-<!-- NAV -->
 <nav class="border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <span class="font-bold">QA Sentiment™</span>
@@ -20,7 +19,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="max-w-7xl mx-auto px-6 py-28 text-center">
   <span class="inline-block mb-6 px-4 py-1 text-sm rounded-full bg-red-50 text-red-700">
     Enterprise-grade honesty for QA teams
@@ -41,7 +39,6 @@
   </button>
 </section>
 
-<!-- FEATURES -->
 <section class="bg-slate-50 py-24">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
 
@@ -69,7 +66,6 @@
   </div>
 </section>
 
-<!-- CTA / Rage Tool -->
 <section class="max-w-4xl mx-auto px-6 py-28 text-center">
   <h2 class="text-4xl font-bold mb-6">Paste Your Test Case</h2>
   <p class="text-slate-600 mb-8">
@@ -93,7 +89,6 @@
   <pre id="outputText" class="whitespace-pre-wrap text-left bg-slate-100 p-6 rounded-2xl border min-h-[120px] mt-6"></pre>
 </section>
 
-<!-- FOOTER -->
 <footer class="border-t py-10 text-center text-sm text-slate-500">
   Not HR approved. Not enterprise safe. Absolutely f***ing necessary.
 </footer>
@@ -106,7 +101,7 @@ async function streamOutput(text) {
   output.textContent = "";
   for (let i = 0; i < text.length; i++) {
     output.textContent += text[i];
-    await new Promise(r => setTimeout(r, 15)); // streaming effect
+    await new Promise(r => setTimeout(r, 15));
     output.scrollTop = output.scrollHeight;
   }
 }
